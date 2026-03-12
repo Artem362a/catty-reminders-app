@@ -1,0 +1,15 @@
+[Unit]
+Description=DevOps Lab App
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/devops-lab/app
+ExecStart=/opt/devops-lab/app/venv/bin/python app.py
+Restart=always
+User=artem
+Group=artem
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target
+

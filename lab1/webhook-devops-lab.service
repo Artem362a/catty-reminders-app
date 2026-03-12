@@ -1,0 +1,14 @@
+[Unit]
+Description=GitHub Webhook Handler for DevOps Lab
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/devops-lab/webhook
+ExecStart=/opt/devops-lab/webhook/venv/bin/python webhook.py
+Restart=always
+User=artem
+Group=artem
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target
